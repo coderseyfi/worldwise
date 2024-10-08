@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import PageNav from "../components/PageNav";
 
 function PageNotFound() {
   return (
-    <div>PageNotFound</div>
-  )
+    <div>
+      <PageNav /> PageNotFound
+    </div>
+  );
 }
 
-export default PageNotFound
+export default PageNotFound;

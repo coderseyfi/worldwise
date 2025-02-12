@@ -11,7 +11,7 @@ function CityList() {
     return <Spinner />;
   }
 
-  if (!cities.length) {
+  if (!cities?.length) {
     return (
       <Message message="Add yout first city by clicking on city on the map" />
     );
@@ -19,7 +19,7 @@ function CityList() {
 
   return (
     <ul className={styles.cityList}>
-      {cities.map((city) => (
+      {cities?.map((city) => (
         <CityItem city={city} key={city.id} />
       ))}
     </ul>

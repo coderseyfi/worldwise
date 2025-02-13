@@ -15,8 +15,25 @@ function reducer(state, action) {
         user: action.payload,
         isAuthenticated: true,
       };
+
+    case "logout":
+      return {
+        ...state,
+        user: null,
+        isAuthenticated: false,
+      };
+
+    default:
+      throw new Errow("Unknownn action");
   }
 }
+
+const FAKE_USER = {
+  name: "Jack",
+  email: "jack@example.com",
+  password: "qwerty",
+  avatar: "https://i.pravatar.cc/100?u=zz",
+};
 
 function AuthPorvider({ children }) {
   const [{ user, isAuthenticated }, dispatch] = useReducer(
@@ -24,11 +41,21 @@ function AuthPorvider({ children }) {
     initalState
   );
 
-  function login(email, password) {}
+  function login(email, password) {
+    if (email === FAKE_USER.email && password === FAKE_USER.password) {
+      dispatch({ type: "login", payload: FAKE_USER });
+    }
+  }
 
-  function logout() {}
+  function logout() {
+    dispatch({ type: "logout" });
+  }
 
-  return <AuthConext.Provide>{children}</AuthConext.Provide>;
+  return (
+    <AuthConext.Provider value={{ user, isAuthenticated, login, logout }}>
+      {children}
+    </AuthConext.Provider>
+  );
 }
 
 function useAuth() {
@@ -39,3 +66,5 @@ function useAuth() {
 
   return context;
 }
+
+export { AuthPorvider, useAuth };

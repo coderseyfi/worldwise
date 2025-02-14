@@ -11,11 +11,11 @@ import CountryList from "./components/CountriesList";
 import City from "./components/City";
 import Form from "./components/Form";
 import { CitiesProvider } from "./contexts/CitiesContext";
-import { AuthPorvider } from "./contexts/FakeAuthContext";
+import { AuthProvider } from "./contexts/FakeAuthContext";
 
 function App() {
   return (
-    <AuthPorvider>
+    <AuthProvider>
       <CitiesProvider>
         <BrowserRouter>
           <Routes>
@@ -34,7 +34,7 @@ function App() {
           </Routes>
         </BrowserRouter>
       </CitiesProvider>
-    </AuthPorvider>
+    </AuthProvider>
   );
 }
 

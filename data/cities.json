@@ -47,6 +47,30 @@
         "lat": "40.40513069752789",
         "lng": "-0.14831542968750003"
       }
+    },
+    {
+      "id": "1415",
+      "cityName": "Benavente",
+      "country": "Portugal",
+      "emoji": "pt",
+      "date": "2025-02-14T06:51:17.709Z",
+      "notes": "sadsadad",
+      "position": {
+        "lat": "38.82473078093276",
+        "lng": "-8.780822753906252"
+      }
+    },
+    {
+      "id": "e1c1",
+      "cityName": "Vejle",
+      "country": "Denmark",
+      "emoji": "dk",
+      "date": "2025-02-14T06:51:21.022Z",
+      "notes": "sssss",
+      "position": {
+        "lat": "55.62799595426723",
+        "lng": "9.667968750000002"
+      }
     }
   ]
 }
